@@ -19,5 +19,7 @@ Route::middleware([
 
 
 
-Route::get('/courses/management', [CourseManagement::class, 'render'])->name('course-management');
+Route::get('/courses/management', CourseManagement::class)->name('course-management');
 
+
+Route::get('/courses/add', CourseManagement::class)->name('course-form');
