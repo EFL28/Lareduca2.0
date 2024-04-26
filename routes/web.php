@@ -1,7 +1,9 @@
 <?php
 
+use App\Livewire\CourseForm;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\CourseManagement;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,4 +24,5 @@ Route::middleware([
 Route::get('/courses/management', CourseManagement::class)->name('course-management');
 
 
-Route::get('/courses/add', CourseManagement::class)->name('course-form');
+Route::get('/courses/add', CourseForm:: class)->name('course-form');
+
