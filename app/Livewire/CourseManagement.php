@@ -7,7 +7,7 @@ use App\Models\Course;
 
 class CourseManagement extends Component
 {
-    public $courses;
+    public $courses, $title, $description, $teacher_id, $course_id;
     public $isModalOpen = false;
 
     public function mount()
@@ -43,8 +43,39 @@ class CourseManagement extends Component
         session()->flash('message', 'Course deleted.');
     }
 
-    public function redirectToForm()
+    public function edit($id)
     {
+        $course = Course::findOrFail($id);
+        $this->course_id = $id;
+        $this->title = $course->title;
+        $this->description = $course->description;
+        $this->teacher_id = $course->teacher_id;
+        $this->openModalPopover();
+    }
 
+    public function store()
+    {
+        //dd($this->title, $this->description, $this->teacher_id);
+        $this->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'teacher_id' => 'required',
+        ]);
+        Course::updateOrCreate(['id' => $this->course_id], [
+            'title' => $this->title,
+            'description' => $this->description,
+            'teacher_id' => $this->teacher_id,
+        ]);
+        session()->flash('message', $this->course_id ? 'Course updated.'
+            : 'Course created.');
+        $this->closeModalPopover();
+        $this->resetCreateForm();
+    }
+
+    private function resetCreateForm()
+    {
+        $this->title = '';
+        $this->description = '';
+        $this->teacher_id = '';
     }
 }

@@ -19,7 +19,7 @@
 
         <div class="">
             <label for="course_teacher" class="block text-md font-semibold text-gray-700">Course Teacher</label>
-            <input wire:model="teacher_id" type="text" name="course_teacher" class="mt-1 mb-3 w-full rounded-md border-gray-300 resize-none shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500" id="course_Teacher" rows="3"></input>
+            <input wire:model="teacher_id" type="number" name="course_teacher" class="mt-1 mb-3 w-full rounded-md border-gray-300 resize-none shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500" id="course_Teacher" rows="3"></input>
         </div>
 
         <div class="mt-4">

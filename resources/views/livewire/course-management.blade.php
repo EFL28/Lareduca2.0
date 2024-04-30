@@ -36,27 +36,27 @@
 
     <div>
         @if ($isModalOpen)
-        <!-- Formulario para añadir un nuevo curso -->
-        <div class="fixed inset-0 overflow-y-auto">
+        <!-- Formulario para editar un curso -->
+        <div class="fixed inset-0 overflow-y-auto bg-black bg-opacity-50">
             <div class="flex items-center justify-center min-h-screen px-4">
                 <div class="bg-white rounded-lg overflow-hidden shadow-xl max-w-md w-full">
                     <div class="px-6 py-4">
                         <div class="flex justify-between items-center">
-                            <h2 class="font-semibold text-xl text-gray-800">{{ __('Nuevo Curso') }}</h2>
+                            <h2 class="font-semibold text-xl text-gray-800">{{ __('Editar Curso') }}</h2>
                             <button class="text-gray-600" wire:click="closeModalPopover()">X</button>
                         </div>
                         <form wire:submit.prevent="store" class="mt-4">
                             <div>
-                                <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
+                                <label for="title" class="block text-sm font-medium text-gray-700">Course Name</label>
                                 <input type="text" id="title" wire:model.defer="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
                             <div class="mt-4">
-                                <label for="description" class="block text-sm font-medium text-gray-700">Descripción</label>
+                                <label for="description" class="block text-sm font-medium text-gray-700">Course Description</label>
                                 <textarea id="description" wire:model.defer="description" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md resize-none"></textarea>
                             </div>
                             <div>
-                                <label for="teacher" class="block text-sm font-medium text-gray-700">Profesor</label>
-                                <input type="number" id="teacher" wire:model.defer="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <label for="teacher" class="block text-sm font-medium text-gray-700">Course Teacher</label>
+                                <input type="number" id="teacher" wire:model.defer="teacher_id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
                             <div class="mt-4 flex justify-end">
                                 <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">

@@ -16,6 +16,7 @@ class CourseForm extends Component
 
     public function store()
     {
+        //dd($this->title, $this->description, $this->teacher_id);
         $this->validate([
             'title' => 'required',
             'description' => 'required',
@@ -45,6 +46,6 @@ class CourseForm extends Component
     {
         $this->title = '';
         $this->description = '';
-        $this->course_id = '';
+        $this->teacher_id = '';
     }
 }
