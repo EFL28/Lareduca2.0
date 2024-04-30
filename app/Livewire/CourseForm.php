@@ -15,8 +15,7 @@ class CourseForm extends Component
     }
 
     public function store()
-    {
-        //dd($this->title, $this->description, $this->teacher_id);
+    {   
         $this->validate([
             'title' => 'required',
             'description' => 'required',

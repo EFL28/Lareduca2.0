@@ -3,6 +3,8 @@
 use App\Livewire\CourseForm;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\CourseManagement;
+use App\Livewire\UsersManagement;
+use App\Livewire\UsersForm;
 
 
 Route::get('/', function () {
@@ -22,7 +24,8 @@ Route::middleware([
 
 
 Route::get('/courses/management', CourseManagement::class)->name('course-management');
-
+Route::get('/users/management', UsersManagement::class)->name('users-management');
 
 Route::get('/courses/add', CourseForm:: class)->name('course-form');
+Route::get('/users/add', UsersForm:: class)->name('user-form');
 
