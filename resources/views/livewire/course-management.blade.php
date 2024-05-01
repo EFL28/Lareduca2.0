@@ -5,9 +5,11 @@
                 Administración de cursos
             </h2>
 
+            @if(Auth::user()->role === 'admin')
             <div>
                 <a href="{{ route('course-form') }}" class="bg-green-400 rounded-lg p-2 font-semibold text-white">Nuevo Curso</a>
             </div>
+            @endif
         </div>
     </x-slot>
     <!-- Listado de cursos -->

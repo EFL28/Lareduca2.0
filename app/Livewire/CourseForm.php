@@ -30,6 +30,7 @@ class CourseForm extends Component
             : 'Course created.');
         //$this->closeModalPopover();
         $this->resetCreateForm();
+        return redirect()->to('/courses/management');
     }
 
     public function edit($id)

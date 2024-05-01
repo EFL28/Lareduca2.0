@@ -19,19 +19,20 @@ class UsersForm extends Component
         $this->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required',
             'role' => 'required',
+            'password' => 'required',
         ]);
 
         User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => bcrypt($this->password),
             'role' => $this->role,
+            'password' => bcrypt($this->password),
         ]);
 
         session()->flash('message', 'User created.');
         $this->resetCreateForm();
+        return redirect()->to('/users/management');
     }
 
     public function resetCreateForm(){

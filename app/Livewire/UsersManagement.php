@@ -8,7 +8,7 @@ use App\Models\User;
 class UsersManagement extends Component
 {
     public $users;
-    public $name, $email, $user_id, $role;
+    public $name, $email, $user_id, $role, $password;
     public $isModalOpen = false;
 
     public function mount()
@@ -52,5 +52,32 @@ class UsersManagement extends Component
         $this->email = $user->email;
         $this->role = $user->role;
         $this->openModalPopover();
+    }
+
+    public function store()
+    {
+        $this->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'role' => 'required',
+            'password' => 'required',
+        ]);
+        User::updateOrCreate(['id' => $this->user_id], [
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password,
+            'role' => $this->role
+        ]);
+        session()->flash('message', $this->user_id ? 'User updated.'
+            : 'User created.');
+        $this->closeModalPopover();
+        $this->resetCreateForm();
+    }
+
+    public function resetCreateForm(){
+        $this->name = '';
+        $this->email = '';
+        $this->password = '';
+        $this->role = '';
     }
 }
