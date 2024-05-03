@@ -47,11 +47,11 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.index')">
+                    <x-nav-link href="{{ route('course-management') }}" :active="request()->routeIs('course-management')">
                         {{ __('Courses') }}
                     </x-nav-link>
 
-                    <x-nav-link href="{{ route('assignments.index') }}" :active="request()->routeIs('assigments.index')">
+                    <x-nav-link href="{{ route('assignments-management') }}" :active="request()->routeIs('assignments-management')">
                         {{ __('Assignments') }}
                     </x-nav-link>
                 </div>
@@ -229,7 +229,7 @@
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('assignments.index') }}" :active="request()->routeIs('assigments.index')">
+            <x-responsive-nav-link href="{{ route('assignments-management') }}" :active="request()->routeIs('assignments-management')">
                 {{ __('Assignments') }}
             </x-responsive-nav-link>
         </div>

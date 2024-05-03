@@ -4,10 +4,10 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class CourseEdit extends Component
+class AssignmentsManagement extends Component
 {
     public function render()
     {
-        return view('livewire.course-edit');
+        return view('livewire.assignments-management');
     }
 }

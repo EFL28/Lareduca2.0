@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Course;
+use App\Models\CourseEnrollment;
+use Illuminate\Support\Facades\Auth;
 
 class CourseManagement extends Component
 {
@@ -77,5 +79,21 @@ class CourseManagement extends Component
         $this->title = '';
         $this->description = '';
         $this->teacher_id = '';
+    }
+
+    public function enroll($id)
+    {
+        $user_id = Auth::user()->id; // Obtiene el ID del usuario logueado
+
+        // Crea una nueva inscripción
+        $enrollment = new CourseEnrollment;
+        $enrollment->user_id = $user_id;
+        $enrollment->course_id = $id;
+        $enrollment->enrollment_date = now();
+        $enrollment->status = 'subscribed';
+        $enrollment->save();
+
+        // Actualiza la lista de cursos para reflejar el cambio
+        $this->courses = Course::all();
     }
 }

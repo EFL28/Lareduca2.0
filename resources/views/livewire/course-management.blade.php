@@ -24,10 +24,16 @@
                                 <h2 class="font-semibold text-xl text-gray-800">{{ $course->title }}</h2>
                                 <p class="text-gray-600">{{ $course->description }}</p>
                             </div>
+                            @if(Auth::user()->role != 'student')
                             <div class="w-32 flex items-center justify-between">
                                 <button wire:click="edit({{ $course->id }})" class="bg-blue-400 rounded-lg p-2 font-semibold text-white">Editar</button>
                                 <button wire:click="delete({{ $course->id }})" class="bg-red-400 rounded-lg p-2 font-semibold text-white ml-4">Eliminar</button>
                             </div>
+                            @else
+                            <div class="">
+                                <button wire:click="enroll({{ $course->id }})" class="bg-indigo-400 rounded-lg p-2 font-semibold text-white">Enroll</button>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
