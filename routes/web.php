@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\CourseManagement;
 use App\Livewire\UsersManagement;
 use App\Livewire\AssignmentsManagement;
+use App\Livewire\AssignmentForm;
 use App\Livewire\UsersForm;
 
 
@@ -30,4 +31,5 @@ Route::get('/assignments/management', AssignmentsManagement::class)->name('assig
 
 Route::get('/courses/add', CourseForm:: class)->name('course-form');
 Route::get('/users/add', UsersForm:: class)->name('user-form');
+Route::get('/assignments/add', AssignmentForm:: class)->name('assignment-form');
 

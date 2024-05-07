@@ -39,6 +39,10 @@
                     <x-nav-link href="{{ route('users-management') }}" :active="request()->routeIs('users-management')">
                         {{ __('Students') }}
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('assignments-management') }}" :active="request()->routeIs('assignments-management')">
+                        {{ __('Assignments') }}
+                    </x-nav-link>
                 </div>
 
                 @elseif(Auth::user()->role === 'student')
@@ -211,7 +215,13 @@
 
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('users-management') }}" :active="request()->routeIs('users-management')">
-                {{ __('Users') }}
+                {{ __('Students') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('assignments-management') }}" :active="request()->routeIs('assignments-management')">
+                {{ __('Assignments') }}
             </x-responsive-nav-link>
         </div>
 
