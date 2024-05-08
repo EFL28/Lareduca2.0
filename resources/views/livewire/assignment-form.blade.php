@@ -29,7 +29,7 @@
 
         <div class="">
             <label for="assignment_due_date" class="block text-md font-semibold text-gray-700">Fecha de entrega</label>
-            <input wire:model="due_date" type="date" name="assignment_due_date" class="mt-1 mb-3 w-full rounded-md border-gray-300 resize-none shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500" id="assignment_due_date" rows="3"></input>
+            <input wire:model="due_date" type="datetime-local" name="assignment_due_date" class="mt-1 mb-3 w-full rounded-md border-gray-300 resize-none shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500" id="assignment_due_date" rows="3"></input>
         </div>
 
         <div class="flex justify-end">
