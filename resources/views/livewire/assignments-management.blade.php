@@ -30,8 +30,8 @@
                 @foreach ($assignments as $assignment)
                 <tbody>
                     <tr class="hover:bg-grey-lighter">
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $assignment->title }}</td>
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $assignment->course->title }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light"><a href="{{ route('assignment-submissions', ['id' => $assignment->id]) }}">{{ $assignment->title }}</a></td>
+                        <td class="py-4 px-6 border-b border-grey-light"><a href="">{{ $assignment->course->title }}</a></td>
                         <td class="py-4 px-6 border-b border-grey-light">{{ $assignment->due_date }}</td>
                         @if (Auth::user()->role != 'student')
                         <td class="py-4 px-6 border-b border-grey-light">
