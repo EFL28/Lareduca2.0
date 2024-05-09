@@ -45,8 +45,12 @@
                         <div class="flex justify-between items-center">
                             <div>
                                 <h2 class="font-semibold text-xl text-gray-800">{{ $user->name }}</h2>
-                                <p class="text-gray-600">{{ $user->email }}</p>
+                                <p class="text-gray-600">Email: {{ $user->email }}</p>
+                                <p class="text-gray-600">Role: {{ $user->role }}</p>
                             </div>
+                            <div>
+                            </div>
+
                             <div class="w-32 flex items-center justify-between">
                                 <button wire:click="edit({{ $user->id }})" class="bg-blue-400 rounded-lg p-2 font-semibold text-white">Editar</button>
                                 <button wire:click="delete({{ $user->id }})" class="bg-red-400 rounded-lg p-2 font-semibold text-white ml-4">Eliminar</button>
