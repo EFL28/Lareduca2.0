@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class GameSession extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    protected $fillable = [
+        'id',
+        'game_id',
+        'user_id',
+        // 'score',
+        'start_time',
+        'end_time',
+        'created_at',
+        'updated_at',
+    ];
 }

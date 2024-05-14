@@ -24,6 +24,10 @@
                     <x-nav-link href="{{ route('users-management') }}" :active="request()->routeIs('users-management')">
                         {{ __('Users') }}
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('games') }}" :active="request()->routeIs('games')">
+                        {{ __('Games') }}
+                    </x-nav-link>
                 </div>
 
                 @elseif(Auth::user()->role === 'teacher')
@@ -43,6 +47,10 @@
                     <x-nav-link href="{{ route('assignments-management') }}" :active="request()->routeIs('assignments-management')">
                         {{ __('Assignments') }}
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('games') }}" :active="request()->routeIs('games')">
+                        {{ __('Games') }}
+                    </x-nav-link>
                 </div>
 
                 @elseif(Auth::user()->role === 'student')
@@ -57,6 +65,10 @@
 
                     <x-nav-link href="{{ route('assignments-management') }}" :active="request()->routeIs('assignments-management')">
                         {{ __('Assignments') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('games') }}" :active="request()->routeIs('games')">
+                        {{ __('Games') }}
                     </x-nav-link>
                 </div>
                 @endif
@@ -200,6 +212,12 @@
             </x-responsive-nav-link>
         </div>
 
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('games') }}" :active="request()->routeIs('games')">
+                {{ __('Games') }}
+            </x-responsive-nav-link>
+        </div>
+
         @elseif(Auth::user()->role === 'teacher')
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
@@ -225,6 +243,12 @@
             </x-responsive-nav-link>
         </div>
 
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('games') }}" :active="request()->routeIs('games')">
+                {{ __('Games') }}
+            </x-responsive-nav-link>
+        </div>
+
         @elseif(Auth::user()->role === 'student')
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
@@ -241,6 +265,12 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('assignments-management') }}" :active="request()->routeIs('assignments-management')">
                 {{ __('Assignments') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link href="{{ route('games') }}" :active="request()->routeIs('games')">
+                {{ __('Games') }}
             </x-responsive-nav-link>
         </div>
         @endif

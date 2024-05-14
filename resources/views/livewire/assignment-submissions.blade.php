@@ -32,9 +32,9 @@
                 @foreach ($assignment->submissions as $submission)
                 <tbody>
                     <tr class="hover:bg-grey-lighter">
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $submission->user_id}}</td>
+                        <td class="py-4 px-6 border-b border-grey-light">{{ $submission->user->name}}</td>
                         <td class="py-4 px-6 border-b border-grey-light">{{ $submission->submitted_at }}</td>
-                        <td class="py-4 px-6 border-b border-grey-light"><a class="font-bold" href="{{ Storage::url($submission->submission_file) }}" target="_blank">Entrega</a></td>
+                        <td class="py-4 px-6 border-b border-grey-light"><a class="font-bold" href="{{ Storage::url($submission->submission_file) }}" target="_blank">Ver entrega</a></td>
                         <!-- <td class="py-4 px-6 border-b border-grey-light">{{ $submission->grade }}</td> -->
                         <td class="py-4 px-6 border-b border-grey-light">
                             <button wire:click="grade({{ $submission->id }})" class="bg-blue-400 rounded-lg p-2 font-semibold text-white">Grade</button>
@@ -50,7 +50,7 @@
         <div class="bg-white shadow-md rounded m-6">
             <form wire:submit.prevent="saveSubmission">
                 <div class="flex flex-col p-4">
-                    <label for="description" class="block text-gray-700 text-lg font-bold mb-2">Submission text:</label>
+                    <label for="submission_text" class="block text-gray-700 text-lg font-bold mb-2">Submission text:</label>
                     <textarea wire:model="submission_text" class="resize-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                     @error('submission_text') <span class="text-red-500">{{ $message }}</span>@enderror
                 </div>
