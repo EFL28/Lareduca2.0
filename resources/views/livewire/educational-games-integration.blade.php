@@ -10,9 +10,12 @@
     <!-- Listado de juegos educativos con mucho css -->
     <div class="grid grid-cols-3 gap-4 p-6">
         @foreach($games as $game)
-        <div class="border border-black rounded p-4 h-48 w-48 text-center cursor-pointer">
-            {{ $game->title }}
-        </div>
+        
+        <a href="{{ $game->url }}?user_id={{Auth::user()->id}}">
+            <div class="border border-black rounded p-4 h-48 w-48 text-center cursor-pointer">
+                {{ $game->title }}
+            </div>
+        </a>
         @endforeach
 
     </div>

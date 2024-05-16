@@ -8,8 +8,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::post('/game-results',[GameResultsController::class, 'store'])->middleware('auth:sanctum');
+Route::post('/game-results',[GameResultsController::class, 'store']);

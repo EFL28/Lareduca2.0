@@ -14,15 +14,14 @@ class GameResultsController extends Controller
         $validated = $request->validate([
             'user_id' => 'required|integer',
             'game_id' => 'required|integer',
-            'attempts' => 'required|integer',
+            'score' => 'required|integer',
             'start_time' => 'required|date',
             'end_time' => 'required|date',
         ]);
         // Calcula la diferencia en minutos usando Carbon
         $duration = Carbon::parse($validated['start_time'])->diffInMinutes($validated['end_time']);
         // Inicia la nota en 10 y ajusta según los intentos y la duración
-        $score = max(10 - ($validated['attempts'] * 0.5) - ($duration *
-            0.1), 0);
+        $score = $validated['score'];
         // Crea una nueva sesión de juego y almacena el resultado
         $gameSession = GameSession::create([
             'user_id' => $validated['user_id'],
