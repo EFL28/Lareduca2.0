@@ -9,6 +9,7 @@ use App\Livewire\AssignmentForm;
 use App\Livewire\UsersForm;
 use App\Livewire\AssignmentSubmissions;
 use App\Livewire\EducationalGamesIntegration;
+use App\Livewire\CourseEnrollment;
 
 
 Route::get('/', function () {
@@ -38,3 +39,5 @@ Route::get('/assignments/add', AssignmentForm:: class)->name('assignment-form');
 Route::get('/assignments/submissions/{id}', AssignmentSubmissions::class)->name('assignment-submissions');
 
 Route::get('/games', EducationalGamesIntegration::class)->name('games');
+
+Route::get('/courses/enrollment', CourseEnrollment::class)->name('course-enrollment');
