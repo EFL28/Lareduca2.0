@@ -18,4 +18,9 @@ class GameSession extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function gameScore()
+    {
+        return $this->hasOne(GameScore::class, 'session_id');
+    }
 }
